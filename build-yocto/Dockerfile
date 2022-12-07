@@ -11,6 +11,9 @@ RUN apt-get install -y gawk wget git-core diffstat unzip texinfo gcc-multilib \
         xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev \
         pylint3 xterm
 
+# Additional host packages required since kirkstone
+RUN apt update && apt install -y zstd liblz4-tool
+
 # Additional host packages required by poky/scripts/wic
 RUN apt-get install -y curl dosfstools mtools parted syslinux tree zip
 
